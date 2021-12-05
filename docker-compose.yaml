@@ -1,0 +1,16 @@
+version: "3"
+
+volumes:
+  postgresql_db:
+
+services:
+  statistic:
+    build: BasketballWebsite/
+    restart: always
+
+  postgresql:
+    image: postgres:latest
+    volumes:
+      - postgresql_db:/var/lib/postgresql/data
+      - restart: always
+
